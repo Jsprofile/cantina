@@ -1,4 +1,4 @@
-// .bar .bottom{ rotate(45deg) translate(7px, 7px)
+// Header
 
 const barsContainer = document.querySelector(".bar")
 const nav = document.querySelector("nav")

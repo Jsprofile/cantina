@@ -27,7 +27,7 @@
 
   /*--------------- Box Variables ---------------*/
 
-  --box-padding: 80px 5%;
+  --box-padding: 100px 5%;
 
   /*--------------- Titles Variables ---------------*/
 
@@ -72,7 +72,7 @@
   --btn-primary-padding: 12px 24px;
 
   /*--------------- General Variables ---------------*/
-  
+
   --borderRadius: 15px;
 
   --primary_normal: #0085FF;
@@ -84,8 +84,9 @@
   --secondary_dark: #c95a00;
 
 
-  
+
   --purple: #562EED;
+  --lightGreen: #34DE18;
 
 
 }
@@ -93,12 +94,14 @@
 
 /*--------------- Classes ---------------*/
 
-html, body{
+html,
+body {
   scroll-behavior: smooth;
 }
 
 body {
   background: var(--background-light);
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -130,44 +133,51 @@ body {
   overflow: hidden;
 }
 
-h1{
+h1 {
   color: var(--title-color);
   font-size: var(--title-fontSize);
   letter-spacing: var(--title-letterSpacing)
 }
 
-h2{
+h2 {
   color: var(--subtitles-color);
   font-size: var(--subtitles-fontSize);
   letter-spacing: var(--subtitles-letterSpacing);
   position: relative;
 }
 
-p{
+h3 {
+  color: #F7780D;
+  font-size: clamp(30px, 4.4vw, 45px);
+}
+
+p {
   color: var(--paragraphs-color);
   font-size: var(--paragraphs-fontSize);
   font-weight: var(--paragraphs-fontWeght);
 }
 
-.TLink{
-  font-size: clamp(14px,1.8vw,20px);
+.TLink {
+  font-size: clamp(24px, 1.8vw, 24px);
+  font-weight: 500;
+  color: var(--lightGreen);
 }
 
-img{
+img {
   border-radius: var(--borderRadius);
 }
 
 
 /*--------------- Buttons ---------------*/
 
-.btn-primary{
+.btn-primary {
   background: var(--btn-primary);
   border-radius: var(--btn-primary-borderRadius);
   padding: var(--btn-primary-padding);
   border: none;
 }
 
-.btn-primary a{
+.btn-primary a {
   color: #fff;
   font-size: 16px;
   font-weight: 600;
@@ -196,7 +206,7 @@ a {
 }
 
 
-.btn a{
+.btn a {
   color: #fff;
   font-weight: 700;
   font-size: 14px;
@@ -273,6 +283,24 @@ display: flex;
 }
 
 
+.grid2 .left {
+  align-items: flex-start;
+}
+
+.grid2 .right {
+  align-items: flex-end;
+}
+
+
+.inverter .left{
+  order: 2;
+  align-items: flex-start;
+}
+
+.inverter .right{
+  order: 1;
+  align-items: flex-start;
+}
 
 
 
@@ -299,8 +327,28 @@ display: flex;
     grid-template-columns: 1fr;
   }
 
-  .grid2 .left, .grid2 .right{
+  .grid2 .left,
+  .grid2 .right {
     align-items: center;
+  }
+
+  .left {
+    align-items: center;
+  }
+
+  .right {
+    align-items: center;
+  }
+
+  .TLink{
+    font-size: 16px;
+  }
+
+  .bigContainer h3{
+    font-size: 24px;
+  }
+  .bigContainer p{
+    text-align: center;
   }
 
 }
