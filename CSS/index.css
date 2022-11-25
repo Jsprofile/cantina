@@ -443,7 +443,7 @@ footer a{
 @media (max-width: 800px) {
 
     .imgText, .betterOption{
-        gap: 5vh;
+        gap: 50px;
     } 
 
 
