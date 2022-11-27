@@ -1,0 +1,14 @@
+//Animations
+
+let fadeTopSimpleElements = document.querySelectorAll("[data-animation]")
+
+
+
+window.onscroll = ()=>{
+    let topDistance = window.pageYOffset + 600
+    fadeTopSimpleElements.forEach(el =>{
+        if(topDistance > el.offsetTop){
+            el.classList.add("fadeTopSimple")
+        }
+    })
+}
