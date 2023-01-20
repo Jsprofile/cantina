@@ -171,10 +171,11 @@ header a span::before {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     background-image: url(../IMGs/image\ 1headline.png);
     background-position: center;
     position: relative;
+    padding: var(--box-padding);
 }
 
 .headline::before {
@@ -198,23 +199,16 @@ header a span::before {
 
 .headline h1 {
     font-size: 5vw;
+    text-align: left;
 }
 
 .headline p {
     font-size: 1.2vw;
     position: relative;
+    text-align: left;
+    margin-top: 20px;
 }
 
-.headline p::before {
-    content: '';
-    width: 95%;
-    height: .3vh;
-    position: absolute;
-    bottom: -5px;
-    left: calc(50% - 47.5%);
-    float: none;
-    background: var(--primary_normal);
-}
 
 .scrld {
     width: fit-content;
@@ -259,6 +253,20 @@ header a span::before {
     box-shadow: 0px -5px 3px 1px #2a547066;
 }
 
+.btnsDiv{
+    z-index: 1;
+    display: flex;
+    gap: 20px;
+}
+
+.headline p + .btnsDiv{
+    margin-top: 40px;
+}
+
+
+
+
+
 @keyframes scrolldown-anim {
     0% {
         opacity: 0;
@@ -282,44 +290,6 @@ header a span::before {
     }
 }
 
-.chevrons {
-    padding: 6px 0 0 0;
-    margin-left: -3px;
-    margin-top: 48px;
-    width: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.chevrondown {
-    margin-top: -6px;
-    position: relative;
-    border: solid var(--color);
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    transform: rotate(45deg);
-}
-
-.chevrondown:nth-child(odd) {
-    animation: pulse54012 500ms ease infinite alternate;
-}
-
-.chevrondown:nth-child(even) {
-    animation: pulse54012 500ms ease infinite alternate 250ms;
-}
-
-@keyframes pulse54012 {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 0.5;
-    }
-}
 
 
 @media (max-width: 800px) {
@@ -354,6 +324,120 @@ header a span::before {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+.threeCardsSection{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--box-padding-topBot);
+    gap: 80px;
+}
+
+.threeCardsSection h2{
+    text-align: center;
+}
+
+.cardsContainer{
+    width: 100%;
+    min-height: 350px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    gap: 30px;
+    padding: 0 5%;
+}
+
+.cardsContainer .card{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.threeCardsSection .card:nth-child(1){
+    background: linear-gradient(180deg, #34DE18 0%, #17A100 100%);
+}
+
+.threeCardsSection .card:nth-child(2){
+    background-image: url(../IMGs/refeicao.png);
+    background-size: cover;
+    background-position: right;
+}
+
+.threeCardsSection .card:nth-child(3){
+    background-image: url(../IMGs/coxinhas.png);
+    background-size: cover;
+    background-position: right;
+}
+
+.threeCardsSection .card:nth-child(2)::before, .threeCardsSection .card:nth-child(3)::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.404);
+    border-radius: 10px;
+    z-index: 0;
+}
+
+
+.threeCardsSection .card h3{
+    color: #fff;
+    font-size: 2em;
+    z-index: 1;
+    text-align: left;
+    font-weight: 500;
+}
+
+.threeCardsSection.card:hover:not(:hover){
+    opacity: .3;
+}
+
+.cardsContainer .card:hover{
+    transform: scale(1.1);
+}
+
+@media (max-width:800px) {
+    .cardsContainer{
+        grid-template-columns: 1fr;
+    }
+    .cardsContainer .card{
+        min-height: 150px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .betterOption {
     width: 100vw;
     min-height: 100vh;
@@ -372,14 +456,32 @@ header a span::before {
     text-align: left;
 }
 
-.betterOption .left p {
-    max-width: 70%;
+.betterOption .right, .betterOption .inverter .left{
+    justify-self: end;
 }
+.betterOption .inverter .right, .betterOption .left{
+    justify-self: start;
+}
+
+
+.betterOption h3{
+    background-image: linear-gradient(to right, #FF7500, #F7780D);
+    color: black;
+    background-clip: text;
+    -webkit-background-clip: text;
+  
+    /* Adicionado: */
+    -webkit-text-fill-color: transparent;
+}
+
+.betterOption p{
+    text-align: left;
+}
+
 
 .betterOption .right img {
-    width: 95%;
+    width: 100%;
 }
-
 
 
 
@@ -474,7 +576,24 @@ footer a {
 
 
 
+.scrollTop {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    opacity: 0;
+    cursor: none;
+    transform: translateY(40px) scale(0);
+    transition: .3s;
+}
 
+.scrollTop-active {
+    opacity: 1 !important;
+    cursor: pointer;
+    transform: translateY(0px) scale(1) !important;
+    transition: .3s;
+}
 
 
 
@@ -484,6 +603,11 @@ footer a {
     .imgText,
     .betterOption {
         gap: 50px;
+        display: contents;
+    }
+
+    .betterOption{
+        min-height: auto;
     }
 
     .bigContainer h3 {
