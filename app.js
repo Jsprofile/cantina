@@ -20,8 +20,19 @@ window.onscroll = () =>{
     var scrollTop = window.pageYOffset + 800
 
     fadeTopSimpleElements.forEach(element => {
-        if(scrollTop > element.offsetTop){
+
+        if(scrollTop > element.offsetTop && !element.dataset.delay){
             element.classList.add("anime")
+        }
+
+        if(element.dataset.delay){
+            let delay = parseInt(element.dataset.delay)
+            
+            setTimeout(()=>{
+                if(scrollTop > element.offsetTop){
+                    element.classList.add("anime")
+                }
+            }, delay)
         }
     })
 }

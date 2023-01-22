@@ -190,11 +190,16 @@ header a span::before {
 }
 
 .headline h1,
-.headline p {
+.headline p, .btnsDiv {
     color: #fff;
     z-index: 2;
     text-align: center;
     animation: fadeStartText 1s forwards;
+}
+
+.btnsDiv{
+    animation-delay: 1.5s;
+    opacity: 0;
 }
 
 .headline h1 {
@@ -295,12 +300,16 @@ header a span::before {
 @media (max-width: 800px) {
 
     .headline {
-        gap: 4vh;
         background: url(../IMGs/image\ 1headline\ -\ mobile.png);
         background-position: center;
         background-size: cover;
+        gap: 0;
+        align-items: center;
     }
 
+    .headline h1, .headline p{
+        text-align: center;
+    }
 
     .headline h1 {
         font-size: 10vw;
@@ -375,18 +384,23 @@ header a span::before {
 
 .threeCardsSection .card:nth-child(1){
     background: linear-gradient(180deg, #34DE18 0%, #17A100 100%);
+    animation-delay: 1s;
 }
 
 .threeCardsSection .card:nth-child(2){
     background-image: url(../IMGs/refeicao.png);
     background-size: cover;
     background-position: right;
+    animation-delay: 2s;
+
 }
 
 .threeCardsSection .card:nth-child(3){
     background-image: url(../IMGs/coxinhas.png);
     background-size: cover;
     background-position: right;
+    animation-delay: 3s;
+
 }
 
 .threeCardsSection .card:nth-child(2)::before, .threeCardsSection .card:nth-child(3)::before{
@@ -415,7 +429,7 @@ header a span::before {
 }
 
 .cardsContainer .card:hover{
-    transform: scale(1.1);
+    transform: scale(1.1) !important;
 }
 
 @media (max-width:800px) {

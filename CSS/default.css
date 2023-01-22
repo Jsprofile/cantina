@@ -43,7 +43,7 @@
   /*--------------- Subtitles Variables ---------------*/
 
   --subtitles-color: #0071FF;
-  --subtitles-fontSize: clamp(36px, 4.4vw, 60px);
+  --subtitles-fontSize: 5em;
   --subtitles-letterSpacing: 2px;
 
 
@@ -147,8 +147,7 @@ h2 {
 }
 
 h3 {
-  /* color: #F7780D; */
-  font-size: clamp(30px, 4.5vw, 65px);
+  font-size: 3em;
 
 }
 
@@ -209,7 +208,7 @@ a {
 
 .btn a, .btn-secondary a {
   color: #fff;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 14px;
 }
 
@@ -300,6 +299,14 @@ display: flex;
 }
 
 @media(max-width:800px) {
+
+  h2{
+    font-size: 3em;
+  }
+  
+  h3{
+    font-size: 1.8em;
+  }
 
   :root {
     --box-padding: 50px 4%;
