@@ -568,6 +568,54 @@ header a span::before {
 
 
 
+.menuSection{
+    width: 100vw;
+    height: clamp(fit-content, 90vh, 100vh);
+    background: url(../IMGs/fast-food-dish-blue_155003-27518.webp);
+    background-size: cover;
+    position: relative;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.menuSection::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.226);
+    top: 0;
+    left: 0;
+}
+
+.menuSection h2{
+    color: #fff;
+}
+
+.menuBox{
+    width: 100%;
+    min-height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #ffffff28;
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.menuBox p{
+    color: #fff;
+    text-align: left;
+}
+
+
+
+
+
+
 footer {
     width: 100%;
     padding: 5vh;
