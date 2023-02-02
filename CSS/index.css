@@ -20,6 +20,7 @@ header {
 
 header img {
     max-width: 200px;
+    border-radius: 0;
 }
 
 header a+a {
@@ -370,7 +371,7 @@ header a span::before {
     padding: 0 5%;
 }
 
-.cardsContainer .card{
+.cardsContainer .card, .cardsContainer a{
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -382,12 +383,12 @@ header a span::before {
     transition: .5s;
 }
 
-.threeCardsSection .card:nth-child(1){
+.threeCardsSection a:nth-child(1){
     background: linear-gradient(180deg, #34DE18 0%, #17A100 100%);
     animation-delay: 1s;
 }
 
-.threeCardsSection .card:nth-child(2){
+.threeCardsSection a:nth-child(2){
     background-image: url(../IMGs/refeicao.png);
     background-size: cover;
     background-position: right;
@@ -395,7 +396,7 @@ header a span::before {
 
 }
 
-.threeCardsSection .card:nth-child(3){
+.threeCardsSection a:nth-child(3){
     background-image: url(../IMGs/coxinhas.png);
     background-size: cover;
     background-position: right;
@@ -403,7 +404,7 @@ header a span::before {
 
 }
 
-.threeCardsSection .card:nth-child(2)::before, .threeCardsSection .card:nth-child(3)::before{
+.threeCardsSection a:nth-child(2)::before, .threeCardsSection a:nth-child(3)::before{
     content: '';
     position: absolute;
     top: 0;
@@ -428,8 +429,8 @@ header a span::before {
     opacity: .3;
 }
 
-.cardsContainer .card:hover{
-    transform: scale(1.1) !important;
+.cardsContainer a:hover{
+    transform: scale(1.03) !important;
 }
 
 @media (max-width:800px) {
