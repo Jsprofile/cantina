@@ -12,15 +12,27 @@ header {
     align-items: center;
     padding: 20px 5%;
     background: transparent;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 100000000000;
+    transition: .5s;
+}
+
+header div:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
 }
 
 header img {
     max-width: 200px;
     border-radius: 0;
+}
+
+header img:nth-child(1){
+    max-width: 60px;
 }
 
 header a+a {
@@ -29,7 +41,8 @@ header a+a {
 
 header a {
     color: #fff;
-    font-size: 14px
+    font-size: 14px;
+    text-transform: uppercase;
 }
 
 header a span {
@@ -45,6 +58,12 @@ header a span::before {
     position: absolute;
     bottom: -5px;
     left: 0;
+}
+
+.activeScrollHeader{
+    background: #004a8f3d;
+    backdrop-filter: blur(15px);
+    transition: .5s;
 }
 
 
@@ -403,6 +422,7 @@ header a span::before {
     animation-delay: 3s;
 
 }
+
 
 .threeCardsSection a:nth-child(2)::before, .threeCardsSection a:nth-child(3)::before{
     content: '';
