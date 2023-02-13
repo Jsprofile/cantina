@@ -10,7 +10,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
+    padding: 20px 15%;
     background: transparent;
     position: fixed;
     top: 0;
@@ -166,10 +166,15 @@ header a span::before {
         font-size: 20px;
     }
 
+    header img{
+        max-width: 150px;
+    }
+
     [data-animation="fadeRight"],
     [data-animation="fadeLeft"] {
         transform: translateX(0) translateY(200px);
     }
+
 
 
 }
@@ -387,7 +392,7 @@ header a span::before {
     grid-template-columns: repeat(3, 1fr);
     place-items: center;
     gap: 30px;
-    padding: 0 5%;
+    padding: 0 15%;
 }
 
 .cardsContainer .card, .cardsContainer a{
@@ -522,7 +527,7 @@ header a span::before {
 
 
 .bigContainer {
-    width: 90%;
+    width: 70%;
     min-height: 300px;
     height: fit-content;
     margin: 100px auto;
@@ -582,6 +587,14 @@ header a span::before {
     max-width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
+}
+
+.picsGrid img:nth-child(3){
+    object-position: right;
+}
+
+.picsGrid img:nth-child(4){
+    object-position: left;
 }
 
 
