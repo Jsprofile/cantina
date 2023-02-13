@@ -175,7 +175,9 @@ header a span::before {
         transform: translateX(0) translateY(200px);
     }
 
-
+    header{
+        padding: 20px 5%;
+    }
 
 }
 
@@ -461,6 +463,7 @@ header a span::before {
 @media (max-width:800px) {
     .cardsContainer{
         grid-template-columns: 1fr;
+        padding: 0 5%;
     }
     .cardsContainer .card{
         min-height: 150px;
@@ -645,6 +648,11 @@ header a span::before {
     text-align: left;
 }
 
+@media(max-width: 800px){
+    .menuBox{
+        padding: 20px;
+    }
+}
 
 
 
@@ -661,6 +669,7 @@ footer p {
     font-size: 20px;
     font-weight: 600;
     color: #fff;
+    text-align: center !important;
 }
 
 footer a {
@@ -669,26 +678,58 @@ footer a {
     cursor: pointer;
 }
 
-
-
-
-.scrollTop {
-    width: 50px;
-    height: 50px;
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    opacity: 0;
-    cursor: none;
-    transform: translateY(40px) scale(0);
-    transition: .3s;
+.socialMediasContainer{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
 }
 
-.scrollTop-active {
-    opacity: 1 !important;
+.socialMediasContainer a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #FFF;
+}
+
+.socialMediasContainer a img{
+    max-width: 30px;
+}
+
+@media(max-width: 800px){
+    .socialMediasContainer{
+        flex-direction: column;
+    }
+    .socialMediasContainer a:nth-child(3){
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.whatsContact{
+    position: fixed;
     cursor: pointer;
-    transform: translateY(0px) scale(1) !important;
-    transition: .3s;
+    right: 30px;
+    bottom: 30px;
+    z-index: 10000000000000;
+}
+
+.whatsContact img{
+    max-width: 50px;
+    border-radius: 0;
 }
 
 
@@ -706,13 +747,17 @@ footer a {
         min-height: auto;
     }
 
+    .bigContainer{
+        width: 90%;
+    }
+
     .bigContainer h3 {
         font-size: 26px;
 
     }
 
     .bigContainer p {
-        text-align: center;
+        text-align: center !important;
         font-size: 16px;
         font-weight: 400;
         max-width: 80%;
@@ -740,4 +785,6 @@ footer a {
     .picsGrid {
         grid-template-columns: 1fr;
     }
+
+
 }
